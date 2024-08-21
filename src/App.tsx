@@ -1,25 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+const list = [
+  {
+    id: "a",
+    name: "Robin",
+  },
+  {
+    id: "b",
+    name: "Dave",
+  },
+];
 
 function App() {
+  const [users, setUsers] = useState(list);
+  const [addUserInput, setAddUserInput] = useState("");
+
+  const removeUsers = (id: string) => {
+    const newUsers = users.filter((user) => user.id !== id);
+    setUsers(newUsers);
+  };
+
+  const addUsers = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const item = {
+      id: String(crypto.randomUUID()),
+      name: addUserInput,
+    };
+
+    const newUsers = [...users, item];
+    setUsers(newUsers);
+
+    setAddUserInput("");
+    console.log(item);
+  };
+
+  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAddUserInput(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ul>
+      <form onSubmit={addUsers}>
+        <input value={addUserInput} onChange={onInputChange} />
+        <button type="submit">add</button>
+      </form>
+      {users.map((user) => (
+        <li key={user.id} onClick={() => removeUsers(user.id)}>
+          {user.name}
+        </li>
+      ))}
+    </ul>
   );
 }
 
