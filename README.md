@@ -30,6 +30,10 @@ $ npx openapi-generator-cli generate \
     -i swagger.yaml \ 
     -g typescript-axios \
     -o src/your_dir_name
+
+-i : yaml/json 파일 위치 (input)
+-g : generator 설정 옵션
+-o : 코드 생성 위치 지정 (output)
 ```
 
 <br/>
