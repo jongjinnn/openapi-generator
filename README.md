@@ -14,7 +14,10 @@ $ yarn install
 
 ## 2. setting swagger.yaml 
 
-root에 위치한 swagger.yaml에 기입 되어있던 내용을 전부 지우고 자신이 명세한 yaml 파일 내용을 입력한다.
+2-1. root에 위치한 'code' directory를 삭제한다.
+
+2-2. root에 위치한 swagger.yaml에 기입 되어있던 내용을 전부 지우고 자신이 명세한 yaml 파일 내용을 입력한다.
+
 
 <br/>
 
@@ -34,7 +37,7 @@ $ npx openapi-generator-cli generate \
 ## 4. custom your api configuration
 
 ```typescript
-/api/instance.ts
+// /api/instance.ts
 import { Configuration, DefaultApi } from "/your_dir_name"; // 경로 수정
 
 const config = new Configuration({
