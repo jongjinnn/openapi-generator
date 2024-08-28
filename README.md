@@ -36,6 +36,8 @@ $ npx openapi-generator-cli generate \
 
 ## 4. custom your api configuration
 
+case 1.
+
 ```typescript
 // /api/instance.ts
 import { Configuration, DefaultApi } from "/your_dir_name"; // 경로 수정
@@ -53,6 +55,8 @@ import { instance } from "./api/instance";
 
 instance.your_api().then().cath()
 ```
+
+case2. yaml 내부에서 BASE_URL과 같은 기본 setting을 설정한다.
 
 
 .
