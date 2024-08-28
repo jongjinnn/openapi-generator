@@ -7,3 +7,6 @@ common.ts
 configuration.ts
 git_push.sh
 index.ts
+src/api/default-api.ts
+src/model/index.ts
+src/model/user.ts
