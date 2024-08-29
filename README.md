@@ -18,6 +18,8 @@ $ yarn install
 
 2-2. root에 위치한 swagger.yaml에 기입 되어있던 내용을 전부 지우고 자신이 명세한 yaml 파일 내용을 입력한다.
 
+2-3. root에 위치한 openapi.json에서 세팅을 확인 후 필요 시 수정한다.
+
 
 <br/>
 
@@ -30,10 +32,12 @@ $ npx openapi-generator-cli generate \
     -i swagger.yaml \ 
     -g typescript-axios \
     -o src/your_dir_name
+    -c openapi.json
 
 -i : yaml/json 파일 위치 (input)
 -g : generator 설정 옵션
 -o : 코드 생성 위치 지정 (output)
+-c : 설정 파일 
 ```
 
 <br/>
