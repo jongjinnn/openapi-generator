@@ -61,7 +61,7 @@ export const instance = new DefaultApi(config);
 ```typescript
 import { instance } from "./api/instance";
 
-instance.your_api().then().cath()
+instance.your_api().then().catch()
 ```
 
 case2. yaml 내부에서 BASE_URL과 같은 기본 setting을 설정한다.
