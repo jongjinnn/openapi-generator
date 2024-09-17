@@ -31,7 +31,7 @@ $ yarn install
 $ npx openapi-generator-cli generate \
     -i swagger.yaml \ 
     -g typescript-axios \
-    -o src/your_dir_name
+    -o src/your_dir_name \
     -c openapi.json
 
 -i : yaml/json 파일 위치 (input)
